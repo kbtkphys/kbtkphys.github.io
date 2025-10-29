@@ -1,27 +1,156 @@
 <!doctype html>
-<html lang="ja">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Kubo Lab Home</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tkykkb — Home</title>
+  <meta name="description" content="Research homepage of tkykkb (kbtkphys)">
   <style>
-    body {
-      font-family: system-ui, sans-serif;
-      margin: 2rem;
-      line-height: 1.6;
+    :root {
+      --fg: #1f2937; /* slate-800 */
+      --muted: #6b7280; /* gray-500 */
+      --link: #2563eb; /* blue-600 */
+      --bg: #ffffff;
+      --card: #f8fafc; /* slate-50 */
     }
-    h1 { color: #333; }
-    a { color: #007acc; text-decoration: none; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+      color: var(--fg); background: var(--bg); line-height: 1.7;
+    }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    header { position: sticky; top: 0; background: rgba(255,255,255,.9); backdrop-filter: saturate(180%) blur(6px); border-bottom: 1px solid #e5e7eb; }
+    .wrap { max-width: 980px; margin: 0 auto; padding: 1rem 1.25rem; }
+    .brand { display:flex; align-items:center; justify-content:space-between; gap:1rem; }
+    nav a { margin-left: 1rem; font-size: 0.95rem; }
+
+    /* hero */
+    .hero { padding: 3.5rem 0 2rem; }
+    .hero h1 { margin: 0 0 .5rem; font-size: clamp(1.6rem, 2.6vw + 1rem, 2.4rem); letter-spacing: .2px; }
+    .hero p { margin: .25rem 0; color: var(--muted); max-width: 60ch; }
+
+    /* sections */
+    section { padding: 2rem 0; border-top: 1px solid #eef2f7; }
+    h2 { font-size: 1.25rem; margin: 0 0 1rem; letter-spacing: .3px; }
+    .card { background: var(--card); padding: 1rem; border-radius: 12px; border: 1px solid #e5e7eb; }
+
+    /* publications: 2 columns (Theory | Experiment) */
+    .pub-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .col h3 { margin: .25rem 0 .75rem; font-size: 1.05rem; color: #111827; }
+    .pub-list { list-style: none; padding: 0; margin: 0; }
+    .pub-item { margin: 0 0 .85rem; }
+    .pub-item .title { font-weight: 600; }
+    .pub-item .journal { color: var(--muted); font-size: .95rem; }
+    .tags { display:inline-flex; gap:.4rem; margin-left:.5rem; font-size:.85rem; color:#374151; }
+    .tag { background:#e5e7eb; padding:.05rem .45rem; border-radius:999px; }
+
+    /* notes */
+    .notes-list { list-style: none; padding: 0; margin: 0; }
+    .note { margin: 0 0 .7rem; }
+    .note small { color: var(--muted); }
+
+    /* footer */
+    footer { border-top: 1px solid #e5e7eb; }
+    .foot { font-size: .92rem; color: var(--muted); padding-bottom: 2rem; }
+
+    /* responsive */
+    @media (max-width: 780px) {
+      nav a { margin-left: .75rem; }
+      .pub-grid { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
-  <h1>ようこそ</h1>
-  <p>これは <strong>kbtkphys.github.io</strong> で作られたページです。</p>
-  <p>好きな内容に書き換えて、自分の研究やプロフィールを紹介できます。</p>
-  <ul>
-    <li><a href="about.html">About（自己紹介）</a></li>
-    <li><a href="research.html">Research（研究紹介）</a></li>
-    <li><a href="contact.html">Contact（連絡先）</a></li>
-  </ul>
+  <header>
+    <div class="wrap brand">
+      <div><strong>Takayuki Kubo</strong> <span style="color:var(--muted)">| kbtkphys</span></div>
+      <nav>
+        <a href="#publications">Publications</a>
+        <a href="#notes">Lecture Notes</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero" id="home">
+      <h1>Superconductivity Theory & Devices</h1>
+      <p>Research focus: nonequilibrium superconductivity (Keldysh–Usadel/Eilenberger), kinetic inductance, SRF cavities, bosonic codes, and quantum devices.</p>
+      <p>Affiliation: KEK (High Energy Accelerator Research Organization), Japan.</p>
+    </section>
+
+    <section id="publications">
+      <h2>Publications</h2>
+      <div class="card pub-grid">
+        <!-- THEORY COLUMN -->
+        <div class="col">
+          <h3>Theory</h3>
+          <ul class="pub-list">
+            <!-- Repeat <li> for each paper; newest on top -->
+            <li class="pub-item">
+              <div class="title"><a href="#" target="_blank" rel="noopener">Higgs‑mode‑induced kinetic inductance and instability in dc‑biased dirty superconductors</a></div>
+              <div class="journal">Phys. Rev. Applied (2024) · with X. Y. Z. <span class="tags"><span class="tag">theory</span><span class="tag">Higgs</span></span></div>
+            </li>
+            <li class="pub-item">
+              <div class="title"><a href="#" target="_blank" rel="noopener">Tc formulas for SN/SS bilayers: ranges of applicability</a></div>
+              <div class="journal">JJAP (2025) <span class="tags"><span class="tag">theory</span><span class="tag">bilayers</span></span></div>
+            </li>
+            <!-- Add more theory papers here -->
+          </ul>
+        </div>
+
+        <!-- EXPERIMENT COLUMN -->
+        <div class="col">
+          <h3>Experiment</h3>
+          <ul class="pub-list">
+            <li class="pub-item">
+              <div class="title"><a href="#" target="_blank" rel="noopener">Ultra‑high‑Q 3D coaxial cavity memory</a></div>
+              <div class="journal">arXiv:2510.xxxxx (2025) · Collaboration <span class="tags"><span class="tag">experiment</span><span class="tag">3D cavity</span></span></div>
+            </li>
+            <li class="pub-item">
+              <div class="title"><a href="#" target="_blank" rel="noopener">Surface treatment effects on TLS losses</a></div>
+              <div class="journal">Conference Proc. (2025) <span class="tags"><span class="tag">experiment</span><span class="tag">TLS</span></span></div>
+            </li>
+            <!-- Add more experimental papers here -->
+          </ul>
+        </div>
+      </div>
+      <p style="margin-top:.75rem; color:var(--muted)">Tip: replace the # links with DOI/arXiv/journal URLs. Keep newest at the top.</p>
+    </section>
+
+    <section id="notes">
+      <h2>Lecture Notes</h2>
+      <div class="card">
+        <ul class="notes-list">
+          <li class="note"><a href="#" target="_blank" rel="noopener">Layered Thin‑Film Technology for SRF Cavities (Principles & Frontiers)</a> <small>— slides/notes, 2025</small></li>
+          <li class="note"><a href="#" target="_blank" rel="noopener">Kinetic Inductance: Nonequilibrium Superconductivity Overview</a> <small>— notes, 2025</small></li>
+          <li class="note"><a href="#" target="_blank" rel="noopener">Two‑Level Systems (TLS) and Dielectric Loss</a> <small>— draft notes, 2025</small></li>
+          <!-- Add more lecture notes here; link PDFs stored in this repo or elsewhere -->
+        </ul>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="card">
+        <p>Email: <a href="mailto:taka@example.edu">taka@example.edu</a> &nbsp;|&nbsp; GitHub: <a href="https://github.com/kbtkphys" target="_blank" rel="noopener">@kbtkphys</a></p>
+        <p>Preprints: <a href="https://arxiv.org/" target="_blank" rel="noopener">arXiv</a> · ORCID: <a href="https://orcid.org/" target="_blank" rel="noopener">orcid.org/0000-0000-0000-0000</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap foot">
+      © <span id="y"></span> Takayuki Kubo. Last updated: <span id="d"></span>
+    </div>
+  </footer>
+
+  <script>
+    // tiny helper to show current year / date
+    const now = new Date();
+    document.getElementById('y').textContent = now.getFullYear();
+    document.getElementById('d').textContent = now.toISOString().slice(0,10);
+  </script>
 </body>
 </html>
