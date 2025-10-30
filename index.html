@@ -76,7 +76,13 @@
     /* rights note */
     .rights{font-size:.82rem;color:var(--muted);margin-left:.5rem}
     .rights a{color:var(--muted);text-decoration:underline}
-    
+
+    /* 1行固定ユーティリティ */
+    .pub-item.one-line { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .pub-item.one-line .title, .pub-item.one-line .journal { display: inline; }
+    .pub-item.one-line .title a { white-space: nowrap; }
+    .pub-item.one-line .pdf-pill, .pub-item.one-line .tags, .pub-item.one-line .oa, .pub-item.one-line .rights { white-space: nowrap; }
+
   </style>
 </head>
 <body>
@@ -277,17 +283,16 @@
               <div class="journal">Jpn. J. Appl. Phys. 64 018001 (2025) <span class="oa">open access</span> </div>
         </li>
        <li class="pub-item">
-              <div class="title"><a href="#" target="_blank" rel="noopener">Challenges and opportunities of srf theory for next generation particle accelerators</a></div>
+              <div class="title"><a href="https://doi.org/10.48550/arXiv.2203.08315" target="_blank" rel="noopener">Challenges and opportunities of srf theory for next generation particle accelerators</a></div>
               <div class="journal">arXiv:2203.08315 <span class="oa">open access</span> </div>
         </li>
-       <li class="pub-item">
+       <li class="pub-item one-line">
               <div class="title"><a href="https://doi.org/10.2221/jcsj.56.277" target="_blank" rel="noopener">対破壊電流密度概観</a></div>
               <div class="journal">TEION KOGAKU 56, 277 (2021) <span class="oa">open access</span> </div>
         </li>
-       <li class="pub-item">
-              <div class="title"><a href="https://doi.org/10.2221/jcsj.54.275" target="_blank" rel="noopener">超伝導加速空洞の物理と課題、そして性能向上への理論的示唆
-―新規参入の誘い―</a></div>
-              <div class="journal">TEION KOGAKU 54, 275 (2019) <span class="oa">open access</span> </div>
+       <li class="pub-item one-line">
+              <div class="title"><a href="https://doi.org/10.2221/jcsj.54.275" target="_blank" rel="noopener">超伝導加速空洞の物理と課題、そして性能向上への理論的示唆―新規参入の誘い―</a></div>
+              <div class="journal">TEION KOGAKU 54, 275 (2019) <span class="oa">open access</span></div>
         </li>
         <li class="pub-item">
               <div class="title"><a href="https://doi.org/10.1088/1361-6668/30/2/023001" target="_blank" rel="noopener">Multilayer coating for higher accelerating fields in superconducting radio-frequency cavities: a review of theoretical aspects</a></div>
